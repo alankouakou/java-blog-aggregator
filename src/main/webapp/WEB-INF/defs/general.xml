@@ -7,10 +7,48 @@
   <definition name="common" template="/WEB-INF/layout/classic.jsp">
     <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
     <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+    <put-attribute name="signature" value="Innovative Solutions" />
   </definition>
   
   <definition name="index" extends="common">
-    <put-attribute name="title" value="Java Blog Aggregator" />
+    <put-attribute name="title" value="Gestion Café - Resto - Bar" />
     <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+    <put-attribute name="current" value="index" />
   </definition>
+  
+  <definition name="vehicules" extends="common">
+    <put-attribute name="title" value="Les Vehicules" />
+    <put-attribute name="body" value="/WEB-INF/jsp/vehicules.jsp" />
+    <put-attribute name="current" value="vehicules" />
+  </definition>
+ 
+  <definition name="register-user" extends="common">
+    <put-attribute name="title" value="Nouvel utilisateur" />
+    <put-attribute name="body" value="/WEB-INF/jsp/register-user.jsp" />
+    <put-attribute name="current" value="register" />
+  </definition>
+ 
+  <definition name="login" extends="common">
+    <put-attribute name="title" value="Authentification" />
+    <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+    <put-attribute name="current" value="login" />
+  </definition>
+
+  <definition name="users" extends="common">
+    <put-attribute name="title" value="Les utilisateurs" />
+    <put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
+    <put-attribute name="current" value="users" />
+  </definition>
+  
+  <definition name="register-vehicule" extends="common">
+  <put-attribute name="title" value="Enregistrer vehicule" />
+  <put-attribute name="body" value="/WEB-INF/jsp/register-vehicule.jsp" />
+  <put-attribute name="current" value="register-vehicule" />
+  </definition>  
+
+  <definition name="clients" extends="common">
+  <put-attribute name="title" value="Les clients" />
+  <put-attribute name="body" value="/WEB-INF/jsp/clients.jsp" />
+  <put-attribute name="current" value="clients" />
+  </definition>    
 </tiles-definitions>
