@@ -60,11 +60,13 @@
 				<ul class="nav navbar-nav">
 					<li class="${current == 'index' ? 'active' : '' }"><a
 						href="<spring:url value="/index.html" />">Home</a></li>
-					<li class="${current == 'vehicules' ? 'active' : ''}"><a
-						href="<spring:url value="/vehicules.html" />">Vehicules</a></li>
+					<security:authorize access="isAuthenticated()">
+						<li class="${current == 'vehicules' ? 'active' : ''}"><a
+							href="<spring:url value="/vehicules.html" />">Vehicules</a></li>
+					</security:authorize>
 					<security:authorize access="isAuthenticated()">
 						<li class="${current == 'clients' ? 'active' : ''}"><a
-							href="<spring:url value="/vehicules.html" />">Clients</a></li>
+							href="<spring:url value="/clients.html" />">Clients</a></li>
 					</security:authorize>
 					<security:authorize access="hasRole('ROLE_ADMIN')">
 						<li class="${current == 'users' ? 'active' : '' }"><a
@@ -84,7 +86,7 @@
 									href="<spring:url value="/register-vehicule.html" />">Ajouter
 										vehicule</a></li>
 								<li><a
-									href="<spring:url value="/register-vehicule.html" />">Ajouter
+									href="<spring:url value="/clients.html" />">Ajouter
 										Client</a></li>
 								<li><a
 									href="<spring:url value="/register-vehicule.html" />">Ajouter

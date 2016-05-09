@@ -56,8 +56,8 @@ public class IndexController {
 	@ModelAttribute("marques")
 	public List<String> listMarques() {
 		List<String> marques = Arrays.asList("Volkswagen", "Mercedes", "BMW", "Toyota", "Renault", "Peugeot", "Nissan",
-				"Audi", "Citroen", "Autres", "Mitsubishi", "Infinity", "Honda", "Ford", "Porsche", "Jeep",
-				"Range Rover", "Hyundai", "Kia");
+				"Audi", "Citroen", "Mitsubishi", "Infinity", "Honda", "Ford", "Porsche", "Jeep", "Range Rover",
+				"Hyundai", "Kia", "Mazda", "Volvo", "Chevrolet", "Lexus", "Acura", "Autres");
 
 		return marques;
 	}

@@ -1,0 +1,147 @@
+package com.coreng.jba.service;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.coreng.jba.entities.Client;
+import com.coreng.jba.entities.Consommation;
+import com.coreng.jba.entities.Role;
+import com.coreng.jba.entities.TypeConso;
+import com.coreng.jba.entities.TypeVehicule;
+import com.coreng.jba.entities.User;
+import com.coreng.jba.entities.Vehicule;
+import com.coreng.jba.repositories.ClientRepository;
+import com.coreng.jba.repositories.ConsommationRepository;
+import com.coreng.jba.repositories.RoleRepository;
+import com.coreng.jba.repositories.TypeConsoRepository;
+import com.coreng.jba.repositories.TypeVehiculeRep;
+import com.coreng.jba.repositories.UserRepository;
+import com.coreng.jba.repositories.VehiculeRepository;
+
+@Transactional
+@Service
+public class InitDbService {
+
+	@Autowired
+	private ConsommationRepository consoRep;
+
+	@Autowired
+	private TypeConsoRepository typeConsoRep;
+
+	@Autowired
+	private UserRepository userRepo;
+
+	@Autowired
+	private ClientRepository clientRepo;
+
+	@Autowired
+	private VehiculeRepository vehiculeRepo;
+
+	@Autowired
+	private TypeVehiculeRep typeVehiculeRep;
+
+	@Autowired
+	private RoleRepository roleRep;
+
+	@PostConstruct
+	protected void init() {
+		TypeConso eauMinerale = new TypeConso("Eau minerale");
+		TypeConso soda = new TypeConso("Soda");
+		TypeConso boissonEnergisante = new TypeConso("Boisson energisante");
+		TypeConso biere = new TypeConso("Bière");
+		TypeConso vins = new TypeConso("Vin");
+		TypeConso spiritueux = new TypeConso("spiritueux");
+		TypeConso boissonChaude = new TypeConso("Boisson chaude");
+
+		typeConsoRep.save(eauMinerale);
+		typeConsoRep.save(soda);
+		typeConsoRep.save(boissonEnergisante);
+		typeConsoRep.save(boissonChaude);
+		typeConsoRep.save(vins);
+		typeConsoRep.save(biere);
+		typeConsoRep.save(spiritueux);
+
+		Consommation heineken = new Consommation("Heineken", biere, 2000, 50, 5);
+		Consommation tuborg = new Consommation("Tuborg", biere, 1000, 50, 5);
+		Consommation redBull = new Consommation("Red bull", boissonEnergisante, 1500, 50, 5);
+		Consommation coca = new Consommation("Coca Cola", soda, 1000, 80, 5);
+		Consommation chivas = new Consommation("Chivas", spiritueux, 25000, 20, 5);
+
+		consoRep.save(heineken);
+		consoRep.save(redBull);
+		consoRep.save(coca);
+		consoRep.save(chivas);
+		consoRep.save(tuborg);
+
+		Role role_user = new Role("ROLE_USER");
+		Role role_admin = new Role("ROLE_ADMIN");
+
+		roleRep.save(role_user);
+		roleRep.save(role_admin);
+
+		User dave = new User("dave", "dave123");
+		dave.addRole(role_admin);
+		dave.addRole(role_user);
+		userRepo.save(dave);
+
+		User naomie = new User("naomie", "naomie123");
+		naomie.addRole(role_user);
+		userRepo.save(naomie);
+
+		User user = new User("user", "user123");
+		user.addRole(role_user);
+		// user.addRole(role_admin);
+		userRepo.save(user);
+
+		User admin = new User("admin", "admin123");
+		admin.addRole(role_user);
+		admin.addRole(role_admin);
+		userRepo.save(admin);
+
+		TypeVehicule coupé = new TypeVehicule("Coupé");
+		typeVehiculeRep.save(coupé);
+
+		TypeVehicule limousine = new TypeVehicule("Limousine");
+		typeVehiculeRep.save(limousine);
+
+		TypeVehicule suv = new TypeVehicule("SUV");
+		typeVehiculeRep.save(suv);
+
+		TypeVehicule berline = new TypeVehicule("Berline");
+		typeVehiculeRep.save(berline);
+		// ---------------------------------------
+		// ---------------------------------------
+		Client c1 = new Client("Alan", "09007718");
+		clientRepo.save(c1);
+
+		Vehicule v1 = new Vehicule("7698 GJ 01", "Mercedes CLK", coupé, c1);
+		vehiculeRepo.save(v1);
+		Vehicule v2 = new Vehicule("4737 EN 01", "Mercedes E350", limousine, c1);
+		vehiculeRepo.save(v2);
+
+		Client c2 = new Client("Marcel", "09009577");
+		Vehicule v4 = new Vehicule("9292GX01", "Mercedes Class C 2009", berline, c2);
+		clientRepo.save(c2);
+		vehiculeRepo.save(v4);
+
+		Client c3 = new Client("Charles", "07835747");
+		Vehicule v3 = new Vehicule("9393FY01", "Audi", suv, c3);
+		clientRepo.save(c3);
+		vehiculeRepo.save(v3);
+
+	}
+
+	public List<Vehicule> findAllVehicles() {
+		return vehiculeRepo.findAll();
+	}
+
+	public List<Vehicule> findAllOrderByMarque() {
+		return vehiculeRepo.findAll();
+	}
+
+}
