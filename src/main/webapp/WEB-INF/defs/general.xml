@@ -51,4 +51,10 @@
   <put-attribute name="body" value="/WEB-INF/jsp/clients.jsp" />
   <put-attribute name="current" value="clients" />
   </definition>    
+
+  <definition name="commandes" extends="common">
+  <put-attribute name="title" value="Les commandes" />
+  <put-attribute name="body" value="/WEB-INF/jsp/commandes.jsp" />
+  <put-attribute name="current" value="commandes" />
+  </definition> 
 </tiles-definitions>

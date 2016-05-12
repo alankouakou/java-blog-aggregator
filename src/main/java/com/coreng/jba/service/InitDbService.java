@@ -99,7 +99,7 @@ public class InitDbService {
 		userRepo.save(user);
 
 		User admin = new User("admin", "admin123");
-		admin.addRole(role_user);
+		// admin.addRole(role_user);
 		admin.addRole(role_admin);
 		userRepo.save(admin);
 

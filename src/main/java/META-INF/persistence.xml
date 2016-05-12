@@ -8,5 +8,7 @@
 		<class>com.coreng.jba.entities.Role</class>
 		<class>com.coreng.jba.entities.Consommation</class>
 		<class>com.coreng.jba.entities.TypeConso</class>
+		<class>com.coreng.jba.entities.Commande</class>
+		<class>com.coreng.jba.entities.LigneCommande</class>
 	</persistence-unit>
 </persistence>

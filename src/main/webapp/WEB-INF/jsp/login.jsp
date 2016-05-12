@@ -40,8 +40,8 @@
 <form class="form-signin" action="/j_spring_security_check" method="POST">
 <h2 class="form-signin-heading">Connexion</h2>
 
-<input type="text" name="j_username" class="form-control col-sm-4" placeholder="Name ..." required autofocus/>
-<input type="password" name="j_password" class="form-control col-sm-4" placeholder="Password ..."/>
+<input type="text" name="j_username" class="form-control col-sm-4" placeholder="Nom ..." required autofocus/>
+<input type="password" name="j_password" class="form-control col-sm-4" placeholder="Mot de passe ..."/>
 
 <input type="submit" value="Sign in" class="btn btn-lg btn-success btn-block"/>
 

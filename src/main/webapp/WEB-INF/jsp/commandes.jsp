@@ -5,10 +5,10 @@
 	prefix="tilesx"%>
 
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-	data-target="#myModal">Ajouter client</button>
+	data-target="#myModal">Ajouter commande</button>
 
 <!-- Modal -->
-<form:form modelAttribute="client" cssClass="form-horizontal">
+<form:form modelAttribute="commande" cssClass="form-horizontal">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -18,25 +18,25 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">Nouveau client</h4>
+					<h4 class="modal-title" id="myModalLabel">Nouvelle commande</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="nom" class="col-sm-2 control-label">Nom:</label>
+						<label for="nom" class="col-sm-2 control-label">Client:</label>
 						<div class="col-sm-4">
-							<form:input path="nom" cssClass="form-control" />
+							<form:select items="${clients}" itemLabel="nom" itemValue="id" path="client" cssClass="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="contact" class="col-sm-2 control-label">Contact:</label>
+						<label for="date" class="col-sm-2 control-label">Date commande :</label>
 						<div class="col-sm-4">
-							<form:input path="contact" cssClass="form-control" />
+							<form:input path="dateCommande" cssClass="form-control" />
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-					<input type="submit" class="btn btn-primary" value="Enregistrer" />
+					<input type="submit" class="btn btn-primary" value="Creer commande" />
 				</div>
 			</div>
 		</div>
@@ -45,15 +45,19 @@
 <table class="table table-condensed table-striped table-hover">
 	<thead>
 		<tr>
-			<th>Nom</th>
-			<th>Contact</th>
+			<th>N&deg; commande</th>
+			<th>Date</th>
+			<th>Client</th>
+			<th>Total</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach items="${clients}" var="client">
+		<c:forEach items="${commandes}" var="commande">
 			<tr>
-				<td>${client.nom}</td>
-				<td>${client.contact}</td>
+				<td>Commande ${commande.id}</td>
+				<td>${commande.dateCommande}</td>
+				<td>${commande.client.name}</td>
+				<td>${commande.totalCommande}</td>
 			</tr>
 		</c:forEach>
 	</tbody>
