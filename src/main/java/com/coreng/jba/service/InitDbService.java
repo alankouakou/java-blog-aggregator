@@ -1,5 +1,6 @@
 package com.coreng.jba.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -9,14 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.coreng.jba.entities.Client;
+import com.coreng.jba.entities.Commande;
 import com.coreng.jba.entities.Consommation;
+import com.coreng.jba.entities.LigneCommande;
 import com.coreng.jba.entities.Role;
 import com.coreng.jba.entities.TypeConso;
 import com.coreng.jba.entities.TypeVehicule;
 import com.coreng.jba.entities.User;
 import com.coreng.jba.entities.Vehicule;
 import com.coreng.jba.repositories.ClientRepository;
+import com.coreng.jba.repositories.CommandeRepository;
 import com.coreng.jba.repositories.ConsommationRepository;
+import com.coreng.jba.repositories.LigneCommandeRepository;
 import com.coreng.jba.repositories.RoleRepository;
 import com.coreng.jba.repositories.TypeConsoRepository;
 import com.coreng.jba.repositories.TypeVehiculeRep;
@@ -26,6 +31,12 @@ import com.coreng.jba.repositories.VehiculeRepository;
 @Transactional
 @Service
 public class InitDbService {
+
+	@Autowired
+	private CommandeRepository commandeRepo;
+
+	@Autowired
+	private LigneCommandeRepository ligneCommandeRepo;
 
 	@Autowired
 	private ConsommationRepository consoRep;
@@ -133,6 +144,37 @@ public class InitDbService {
 		Vehicule v3 = new Vehicule("9393FY01", "Audi", suv, c3);
 		clientRepo.save(c3);
 		vehiculeRepo.save(v3);
+
+		Commande cmd1 = new Commande();
+		cmd1.setClient(c1);
+		commandeRepo.save(cmd1);
+
+		LigneCommande lignec1 = new LigneCommande();
+		lignec1.setCommande(cmd1);
+		lignec1.setConsommation(heineken);
+		lignec1.setQuantite(2);
+		lignec1.setMontant(lignec1.getQuantite() * lignec1.getConsommation().getPrixConso());
+		ligneCommandeRepo.save(lignec1);
+
+		LigneCommande lignec2 = new LigneCommande();
+		lignec2.setCommande(cmd1);
+		lignec2.setConsommation(tuborg);
+		lignec2.setQuantite(10);
+		lignec2.setMontant(lignec2.getQuantite() * lignec2.getConsommation().getPrixConso());
+		ligneCommandeRepo.save(lignec2);
+
+		LigneCommande lignec3 = new LigneCommande();
+		lignec3.setCommande(cmd1);
+		lignec3.setConsommation(redBull);
+		lignec3.setQuantite(3);
+		lignec3.setMontant(lignec3.getQuantite() * lignec3.getConsommation().getPrixConso());
+		ligneCommandeRepo.save(lignec3);
+
+		List<LigneCommande> lignes = new ArrayList<LigneCommande>();
+		lignes.add(lignec1);
+		lignes.add(lignec3);
+		cmd1.setLigneCommandes(lignes);
+		commandeRepo.save(cmd1);
 
 	}
 

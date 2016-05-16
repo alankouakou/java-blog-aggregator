@@ -13,18 +13,18 @@ public class LigneCommande {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String article;
-	private int quantiteLigne;
-	private int prixArticle;
-	private int prixTotalLigne;
+	@ManyToOne
+	@JoinColumn(name = "consommation_id")
+	private Consommation consommation;
+	private int quantite;
+	private int montant;
 
 	@ManyToOne
 	@JoinColumn(name = "commande_id")
 	private Commande commande;
 
 	public LigneCommande() {
-		quantiteLigne = 0;
-		article = "";
+		quantite = 0;
 	}
 
 	public Long getId() {
@@ -35,6 +35,14 @@ public class LigneCommande {
 		this.id = id;
 	}
 
+	public Consommation getConsommation() {
+		return consommation;
+	}
+
+	public void setConsommation(Consommation consommation) {
+		this.consommation = consommation;
+	}
+
 	public Commande getCommande() {
 		return commande;
 	}
@@ -43,36 +51,20 @@ public class LigneCommande {
 		this.commande = commande;
 	}
 
-	public int getQuantiteLigne() {
-		return quantiteLigne;
+	public int getQuantite() {
+		return quantite;
 	}
 
-	public void setQuantiteLigne(int quantiteLigne) {
-		this.quantiteLigne = quantiteLigne;
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
 	}
 
-	public int getPrixArticle() {
-		return prixArticle;
+	public int getMontant() {
+		return montant;
 	}
 
-	public void setPrixArticle(int prixArticle) {
-		this.prixArticle = prixArticle;
-	}
-
-	public String getArticle() {
-		return article;
-	}
-
-	public void setArticle(String article) {
-		this.article = article;
-	}
-
-	public int getPrixTotalLigne() {
-		return prixTotalLigne;
-	}
-
-	public void setPrixTotalLigne(int prixTotalLigne) {
-		this.prixTotalLigne = prixTotalLigne;
+	public void setMontant(int montant) {
+		this.montant = montant;
 	}
 
 }

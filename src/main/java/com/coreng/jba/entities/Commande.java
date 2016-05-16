@@ -24,11 +24,11 @@ public class Commande {
 	private Client client;
 	private Date dateCommande;
 	@OneToMany(mappedBy = "commande")
-	private List<LigneCommande> ligneCommandes;
+	private List<LigneCommande> lignesCommande;
 
 	public Commande() {
 		dateCommande = new Date();
-		ligneCommandes = new ArrayList<LigneCommande>();
+		lignesCommande = new ArrayList<LigneCommande>();
 	}
 
 	public Long getId() {
@@ -56,22 +56,29 @@ public class Commande {
 	}
 
 	public List<LigneCommande> getLigneCommandes() {
-		return ligneCommandes;
+		return lignesCommande;
 	}
 
-	public void setLigneCommandes(List<LigneCommande> ligneCommandes) {
-		this.ligneCommandes = ligneCommandes;
+	public void setLigneCommandes(List<LigneCommande> lignesCommande) {
+		this.lignesCommande = lignesCommande;
 	}
 
 	public int getTotalCommande() {
 		int total = 0;
 		// Si on a des lignes commandes
-		/*
-		 * if (ligneCommandes.size() > 0) { for (LigneCommande ligne :
-		 * ligneCommandes) { total += ligne.getPrixArticle() *
-		 * ligne.getQuantiteLigne(); } }
-		 */
+
+		if (lignesCommande.size() > 0) {
+			for (LigneCommande ligne : lignesCommande) {
+				total += ligne.getMontant();
+			}
+		}
+
 		return total;
+	}
+
+	@Override
+	public String toString() {
+		return "commande id: " + this.id + " date: " + this.dateCommande + " ";
 	}
 
 }

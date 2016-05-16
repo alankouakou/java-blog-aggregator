@@ -54,12 +54,15 @@
 	</div>
 </form:form>
 <table class="table table-condensed table-striped table-hover">
+<thead>
 	<tr>
 		<th>Marque</th>
 		<th>Type véhicule</th>
 		<th>Immatriculation</th>
 		<th>Owner</th>
 	</tr>
+	</thead>
+	<tbody>
 	<c:forEach items="${vehicules}" var="vehicule">
 		<tr>
 			<td>${vehicule.marque}</td>
@@ -68,4 +71,5 @@
 			<td>${vehicule.owner.nom}</td>
 		</tr>
 	</c:forEach>
+	</tbody>
 </table>

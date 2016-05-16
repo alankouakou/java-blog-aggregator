@@ -57,4 +57,11 @@
   <put-attribute name="body" value="/WEB-INF/jsp/commandes.jsp" />
   <put-attribute name="current" value="commandes" />
   </definition> 
+
+  <definition name="detail-commande" extends="common">
+  <put-attribute name="title" value="Commande" />
+  <put-attribute name="body" value="/WEB-INF/jsp/detail-commande.jsp" />
+  <put-attribute name="current" value="commandes" />
+  </definition> 
+
 </tiles-definitions>

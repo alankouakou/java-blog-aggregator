@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><entities>
 	<entity>
+		<entity-name>com.coreng.jba.entities.Client</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>166</entity-height>
+		<entity-X-Coordinate>453</entity-X-Coordinate>
+		<entity-Y-Coordinate>61</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
 		<entity-name>com.coreng.jba.entities.Role</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
@@ -11,22 +22,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.coreng.jba.entities.Client</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>166</entity-height>
-		<entity-X-Coordinate>580</entity-X-Coordinate>
-		<entity-Y-Coordinate>62</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
 		<entity-name>com.coreng.jba.entities.TypeVehicule</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
-		<entity-X-Coordinate>520</entity-X-Coordinate>
-		<entity-Y-Coordinate>392</entity-Y-Coordinate>
+		<entity-X-Coordinate>915</entity-X-Coordinate>
+		<entity-Y-Coordinate>64</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -47,8 +47,8 @@
 		<entity-name>com.coreng.jba.entities.Vehicule</entity-name>
 		<entity-width>151</entity-width>
 		<entity-height>186</entity-height>
-		<entity-X-Coordinate>240</entity-X-Coordinate>
-		<entity-Y-Coordinate>210</entity-Y-Coordinate>
+		<entity-X-Coordinate>698</entity-X-Coordinate>
+		<entity-Y-Coordinate>58</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -57,9 +57,9 @@
 	<entity>
 		<entity-name>com.coreng.jba.entities.Consommation</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>186</entity-height>
-		<entity-X-Coordinate>750</entity-X-Coordinate>
-		<entity-Y-Coordinate>98</entity-Y-Coordinate>
+		<entity-height>206</entity-height>
+		<entity-X-Coordinate>737</entity-X-Coordinate>
+		<entity-Y-Coordinate>530</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -68,9 +68,31 @@
 	<entity>
 		<entity-name>com.coreng.jba.entities.TypeConso</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>108</entity-height>
-		<entity-X-Coordinate>699</entity-X-Coordinate>
-		<entity-Y-Coordinate>365</entity-Y-Coordinate>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>940</entity-X-Coordinate>
+		<entity-Y-Coordinate>433</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.coreng.jba.entities.Commande</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>166</entity-height>
+		<entity-X-Coordinate>280</entity-X-Coordinate>
+		<entity-Y-Coordinate>292</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.coreng.jba.entities.LigneCommande</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>186</entity-height>
+		<entity-X-Coordinate>510</entity-X-Coordinate>
+		<entity-Y-Coordinate>472</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

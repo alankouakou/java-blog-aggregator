@@ -4,12 +4,10 @@ import java.beans.PropertyEditorSupport;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,7 +61,7 @@ public class IndexController {
 	}
 
 	@InitBinder
-	protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
+	protected void initBinder(WebDataBinder binder) throws Exception {
 		binder.registerCustomEditor(TypeVehicule.class, "typeVehicule", new PropertyEditorSupport() {
 			@Override
 			public void setAsText(String text) {

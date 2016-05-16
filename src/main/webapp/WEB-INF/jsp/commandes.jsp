@@ -1,8 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras"
-	prefix="tilesx"%>
+<%@ include file="../layout/tags.jsp" %>
 
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
 	data-target="#myModal">Ajouter commande</button>
@@ -54,9 +50,9 @@
 	<tbody>
 		<c:forEach items="${commandes}" var="commande">
 			<tr>
-				<td>Commande ${commande.id}</td>
-				<td>${commande.dateCommande}</td>
-				<td>${commande.client.name}</td>
+				<td><a href="<spring:url value="/commande/${commande.id}.html"></spring:url>">Commande ${commande.id}</a></td>
+				<td><fmt:formatDate type="date" dateStyle="Long" value="${commande.dateCommande}" /></td>
+				<td>${commande.client.nom}</td>
 				<td>${commande.totalCommande}</td>
 			</tr>
 		</c:forEach>
