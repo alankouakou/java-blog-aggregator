@@ -21,7 +21,7 @@ public class Consommation {
 	private int stockMini;
 	private int qteEnStock;
 
-	protected Consommation() {
+	public Consommation() {
 
 	}
 

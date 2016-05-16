@@ -64,4 +64,17 @@
   <put-attribute name="current" value="commandes" />
   </definition> 
 
+  <definition name="typesconso" extends="common">
+  <put-attribute name="title" value="Types consommation" />
+  <put-attribute name="body" value="/WEB-INF/jsp/typesconso.jsp" />
+  <put-attribute name="current" value="index" />
+  </definition> 
+
+  <definition name="consommations" extends="common">
+  <put-attribute name="title" value="Consommations" />
+  <put-attribute name="body" value="/WEB-INF/jsp/consommations.jsp" />
+  <put-attribute name="current" value="consommations" />
+  </definition> 
+
+
 </tiles-definitions>

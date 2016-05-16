@@ -19,7 +19,7 @@ public class TypeConso {
 	@OneToMany(mappedBy = "typeConso")
 	private List<Consommation> consommations;
 
-	protected TypeConso() {
+	public TypeConso() {
 	}
 
 	public TypeConso(String name) {

@@ -14,14 +14,19 @@ import com.coreng.jba.repositories.ConsommationRepository;
 public class ConsommationService {
 
 	@Autowired
-	private ConsommationRepository consommationRepository;
+	private ConsommationRepository consommationRepo;
 
 	public List<Consommation> findAll() {
-		return consommationRepository.findAll();
+		return consommationRepo.findAll();
 	}
 
 	public Consommation findOne(Long id) {
-		return consommationRepository.findOne(id);
+		return consommationRepo.findOne(id);
+	}
+
+	public void save(Consommation consommation) {
+		// TODO Auto-generated method stub
+		consommationRepo.save(consommation);
 	}
 
 }

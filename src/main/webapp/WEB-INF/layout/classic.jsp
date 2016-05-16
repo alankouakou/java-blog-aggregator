@@ -94,15 +94,12 @@
 									href="<spring:url value="/clients.html" />">Ajouter
 										Client</a></li>
 								<li><a
-									href="<spring:url value="/commandes.html" />">Ajouter
-										Commandes</a></li>
+									href="<spring:url value="/commandes.html" />">Commandes</a></li>
 
 								<li><a
-									href="<spring:url value="/register-vehicule.html" />">Ajouter
-										Type Consommation</a></li>
+									href="<spring:url value="/typesconso.html" />">Types Consommation</a></li>
 								<li><a
-									href="<spring:url value="/register-vehicule.html" />">Ajouter
-										Consommation</a></li>
+									href="<spring:url value="/consommations.html" />">Consommations</a></li>
 							</ul></li>
 					</security:authorize>
 					<security:authorize access="! isAuthenticated()">
