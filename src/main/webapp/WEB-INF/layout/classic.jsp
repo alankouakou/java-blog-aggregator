@@ -54,10 +54,6 @@
 					<li class="${current == 'index' ? 'active' : '' }"><a
 						href="<spring:url value="/index.html" />">Home</a></li>
 					<security:authorize access="isAuthenticated()">
-						<li class="${current == 'vehicules' ? 'active' : ''}"><a
-							href="<spring:url value="/vehicules.html" />">Vehicules</a></li>
-					</security:authorize>
-					<security:authorize access="isAuthenticated()">
 						<li class="${current == 'clients' ? 'active' : ''}"><a
 							href="<spring:url value="/clients.html" />">Clients</a></li>
 					</security:authorize>
@@ -82,6 +78,9 @@
 							<ul class="dropdown-menu">
 								<li class="dropdown-header">Parametres generaux</li>
 								<li><a href="<spring:url value="/index.html" />">Home</a></li>
+								<security:authorize access="hasRole('ROLE_ADMIN')">
+									<li><a href="<spring:url value="/vehicules.html" />">Vehicules</a></li>
+								</security:authorize>
 								<li role="separator" class="divider"></li>
 								<li><a href="<spring:url value="/register-user.html" />">Ajouter
 										utilisateur</a></li>
@@ -97,7 +96,7 @@
 								<li><a
 									href="<spring:url value="/typesconso.html" />">Types Consommation</a></li>
 								<li><a
-									href="<spring:url value="/consommations.html" />">Stocks</a></li>
+									href="<spring:url value="/consommations.html" />">Consommations</a></li>
 								<li><a
 									href="<spring:url value="/graphiques.html" />">Graphes</a></li>
 
