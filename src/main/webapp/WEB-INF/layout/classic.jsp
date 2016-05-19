@@ -24,11 +24,6 @@
 <title><tiles:getAsString name="title" /></title>
 <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
 	window.jQuery
 			|| document
@@ -36,8 +31,6 @@
 </script>
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-
-<script src="../../resources/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -78,6 +71,11 @@
 							href="<spring:url value="/users.html" />">Utilisateurs</a></li>
 					</security:authorize>
 					<security:authorize access="hasRole('ROLE_ADMIN')">
+						<li class="${current == 'consommations' ? 'active' : '' }"><a
+							href="<spring:url value="/graphiques.html" />">Stocks</a></li>
+					</security:authorize>
+
+					<security:authorize access="hasRole('ROLE_ADMIN')">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">Admin tasks <span class="caret"></span></a>
@@ -99,7 +97,10 @@
 								<li><a
 									href="<spring:url value="/typesconso.html" />">Types Consommation</a></li>
 								<li><a
-									href="<spring:url value="/consommations.html" />">Consommations</a></li>
+									href="<spring:url value="/consommations.html" />">Stocks</a></li>
+								<li><a
+									href="<spring:url value="/graphiques.html" />">Graphes</a></li>
+
 							</ul></li>
 					</security:authorize>
 					<security:authorize access="! isAuthenticated()">
@@ -141,6 +142,7 @@
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
+    <script src="../../resources/js/bootstrap.min.js"></script>
 	<!-- Placed at the end of the document so the pages load faster -->
 </body>
 </html>

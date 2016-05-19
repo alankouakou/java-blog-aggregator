@@ -53,8 +53,16 @@
 				<td><a href="<spring:url value="/commande/${commande.id}.html"></spring:url>">Commande ${commande.id}</a></td>
 				<td><fmt:formatDate type="date" dateStyle="Long" value="${commande.dateCommande}" /></td>
 				<td>${commande.client.nom}</td>
-				<td>${commande.totalCommande}</td>
+				<td><fmt:formatNumber value="${commande.totalCommande}" type="currency" maxFractionDigits="0" currencySymbol="FCFA"/></td>
 			</tr>
 		</c:forEach>
+		<security:authorize access="hasRole('ROLE_ADMIN')">
+		<tr>
+		<td><p class="lead">Recette :</p></td>
+		<td></td>
+		<td></td>
+		<td><p class="lead"><fmt:formatNumber value="${totalCommandes}" type="currency" maxFractionDigits="0" currencySymbol="F CFA" /></p></td>
+		</tr>
+		</security:authorize>
 	</tbody>
 </table>

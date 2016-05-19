@@ -3,7 +3,6 @@ package com.coreng.jba.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +58,6 @@ public class InitDbService {
 	@Autowired
 	private RoleRepository roleRep;
 
-	@PostConstruct
 	protected void init() {
 		TypeConso eauMinerale = new TypeConso("Eau minerale");
 		TypeConso soda = new TypeConso("Soda");

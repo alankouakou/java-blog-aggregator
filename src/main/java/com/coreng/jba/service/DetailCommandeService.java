@@ -36,11 +36,22 @@ public class DetailCommandeService {
 		prix = conso.getPrixConso();
 		qte = ligneCommande.getQuantite();
 		ligneCommande.setMontant(prix * qte);
-		ligneCommandeRepo.save(ligneCommande);
+		int NlleQte = conso.getQteEnStock() - qte;
+		// Met à jour le stock si la qté restante est > 0
+		if (NlleQte >= 0) {
+			conso.setQteEnStock(NlleQte);
+			ligneCommandeRepo.save(ligneCommande);
+			consommationRepo.save(conso);
+		}
 	}
 
 	public void save(LigneCommande ligneCommande, Commande commande) {
 		ligneCommande.setCommande(commande);
 		ligneCommandeRepo.save(ligneCommande);
 	}
+
+	public Long totalCommandes() {
+		return ligneCommandeRepo.totalCommandes();
+	};
+
 }

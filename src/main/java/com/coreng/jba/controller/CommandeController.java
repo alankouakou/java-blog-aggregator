@@ -76,6 +76,11 @@ public class CommandeController {
 		return commandeService.findAll();
 	}
 
+	@ModelAttribute("totalCommandes")
+	private Long getTotalCommandes() {
+		return detailCommandeService.totalCommandes();
+	}
+
 	@RequestMapping(value = "/commandes", method = RequestMethod.GET)
 	public String listCommandes(@ModelAttribute("commandes") List<Commande> commandes) {
 		for (Commande commande : commandes) {

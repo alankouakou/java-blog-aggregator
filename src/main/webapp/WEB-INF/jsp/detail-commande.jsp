@@ -5,9 +5,9 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles-extras"
 	prefix="tilesx"%>
 
+<div class="pull-right"><a href="<spring:url value="/commandes.html" />" ><small>retour menu</small></a></div>
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
 	data-target="#myModal">Ajouter ligne commande</button>
-
 <!-- Modal -->
 <form:form modelAttribute="ligneCommande" cssClass="form-horizontal">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"

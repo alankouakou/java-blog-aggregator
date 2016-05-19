@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -57,6 +58,11 @@ public class ConsommationController {
 	public String saveConsommation(@ModelAttribute("consommation") Consommation consommation) {
 		consommationService.save(consommation);
 		return "redirect:/consommations.html";
+	}
+
+	@RequestMapping("/graphiques")
+	public String chartsConso(Model model) {
+		return "graphiques";
 	}
 
 }

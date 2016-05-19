@@ -71,8 +71,14 @@
   </definition> 
 
   <definition name="consommations" extends="common">
-  <put-attribute name="title" value="Consommations" />
+  <put-attribute name="title" value="Stock Consommations" />
   <put-attribute name="body" value="/WEB-INF/jsp/consommations.jsp" />
+  <put-attribute name="current" value="consommations" />
+  </definition> 
+
+  <definition name="graphiques" extends="common">
+  <put-attribute name="title" value="Inventaire de stock" />
+  <put-attribute name="body" value="/WEB-INF/jsp/stocks.jsp" />
   <put-attribute name="current" value="consommations" />
   </definition> 
 

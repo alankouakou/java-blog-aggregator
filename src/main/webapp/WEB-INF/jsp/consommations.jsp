@@ -72,7 +72,7 @@
 	</thead>
 	<tbody>
 	<c:forEach items="${consommations}" var="consommation">
-		<tr>
+		<tr class="${consommation.qteEnStock <= consommation.stockMini?'danger' : ''}">
 			<td>${consommation.name}</td>
 			<td>${consommation.typeConso.name}</td>
 			<td>${consommation.prixConso}</td>
