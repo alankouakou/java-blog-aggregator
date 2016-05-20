@@ -46,13 +46,10 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"><img
-					src="../../resources/images/allianz-icon.png" /> </a>
+				<a class="navbar-brand" href="index.html">Clean'Auto <span class="glyphicon glyphicon-stats"></span> </a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="${current == 'index' ? 'active' : '' }"><a
-						href="<spring:url value="/index.html" />">Home</a></li>
 					<security:authorize access="isAuthenticated()">
 						<li class="${current == 'clients' ? 'active' : ''}"><a
 							href="<spring:url value="/clients.html" />">Clients</a></li>

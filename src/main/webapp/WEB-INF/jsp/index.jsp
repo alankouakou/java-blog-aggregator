@@ -1,8 +1,11 @@
+<%@ include file="../layout/tags.jsp" %>
 <br />
 <p class="alert alert-success">Mon tableau de bord</p>
-
-<a class="btn btn-primary" href="#">Mes stocks</a>
-<a class="btn btn-primary" href="#">Mes Ventes</a>
-<a class="btn btn-primary" href="#">Mes Depenses</a>
+<p class="lead">La gestion sans stress </p>
+<security:authorize access="hasRole('ROLE_ADMIN')">
+<a class="btn btn-primary" href="<spring:url value="/consommations.html"/>">Produits</a>
+<a class="btn btn-primary" href="<spring:url value="/commandes.html"/>">Ventes</a>
+<a class="btn btn-primary" href="<spring:url value="/graphiques.html"/>">Graphes</a>
+</security:authorize>
 <p></p>  
-<p>Core Engine May 2016 &copy</p>
+

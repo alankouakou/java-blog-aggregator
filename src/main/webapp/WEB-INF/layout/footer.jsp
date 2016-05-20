@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <footer class="footer">
-	<div class="container">
-		<p class="text-muted">&copy; Alan KOUAKOU - CORE Engineering.</p>
+	<div class="container">	
+		<p class="text-muted">CorEng &copy;	 Mai 2016  </p>
 	</div>
 </footer>

@@ -7,7 +7,7 @@
   <definition name="common" template="/WEB-INF/layout/classic.jsp">
     <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
     <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
-    <put-attribute name="signature" value="Innovative Solutions" />
+    <put-attribute name="signature" value="" />
   </definition>
   
   <definition name="index" extends="common">
