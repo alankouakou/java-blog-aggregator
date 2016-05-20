@@ -59,7 +59,7 @@ $(function () {
         tooltip: {
             formatter: function () {
                 return '<b>' + this.point.name + '</b><br/>' +
-                this.series.name + ' ' + this.point.y ;
+                this.series.name + ' : ' + this.point.y ;
             }
         }
     });

@@ -5,7 +5,7 @@
 <security:authorize access="hasRole('ROLE_ADMIN')">
 <a class="btn btn-primary" href="<spring:url value="/consommations.html"/>">Produits</a>
 <a class="btn btn-primary" href="<spring:url value="/commandes.html"/>">Ventes</a>
-<a class="btn btn-primary" href="<spring:url value="/graphiques.html"/>">Graphes</a>
+<a class="btn btn-primary" href="<spring:url value="/graphiques.html"/>">Stocks</a>
 </security:authorize>
 <p></p>  
 
